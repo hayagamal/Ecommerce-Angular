@@ -11,6 +11,7 @@ export class CartService {
   addToCart(product: product) {
     let Quantity = this.Quantity;
     this.cart.push({ ...product, Quantity });
+    
   }
   //returns all products in cart to be retrieved in cart page.
   getProductsinCart() {
