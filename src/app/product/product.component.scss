@@ -1,0 +1,45 @@
+.product-container{
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 100%;
+    }
+   p{
+    @extend %card-details-in-center;
+    margin-top: 0;
+   }
+    h3{
+    @extend %card-details-in-center;
+    }
+    button{
+        width: 100px;
+        height: 25px;
+        border: none;
+        color: white;
+        background-color: red;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+    }
+    #quantity{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        p{
+            padding-top: 3px;
+            
+        }
+        span{
+            font-weight: bold;
+        }
+    }
+
+}
+%card-details-in-center{
+    text-align: center;
+}

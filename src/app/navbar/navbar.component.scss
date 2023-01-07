@@ -1,0 +1,33 @@
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+
+    ul{
+        @extend %navStyles;
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+    }
+    .cart{
+        @extend %navStyles;
+        padding-right: 20px;
+    }
+}
+%navStyles {
+   
+    *{
+    text-decoration: none;
+    color: white;
+    }
+    *:hover{
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+    }
+    *.active{
+        color: #1c9435;
+    }
+}

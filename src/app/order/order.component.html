@@ -1,0 +1,10 @@
+<div class="per-order">
+<tr class="order">
+  <td>{{order.OrderId}}</td>
+  <td>{{this.subtotal | currency}}</td>
+  <td>{{order.PaymentType}}</td>
+
+  <td><button routerLink="/orders/order/{{order.OrderId}}">Order Details</button></td>
+</tr>
+</div>
+
