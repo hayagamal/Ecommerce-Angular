@@ -85,7 +85,8 @@
           <h4>Subtotal</h4>
           <p>{{ getTotal() | currency }}</p>
         </div>
-        <input type="submit" class="submit-btn" value="Place Order" />
+        <p id="error">{{validate()}}</p>
+        <input [disabled]="getItemsinCart().length == 0 && validate() != ' '" type="submit" class="submit-btn" value="Place Order" />
       </form>
     </div>
   </div>
