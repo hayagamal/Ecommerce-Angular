@@ -1,9 +1,6 @@
 # Angular Ecommerce Frontend Project (Admin Panel)
 implemented using Angular and styled using SCSS.
 
-### Live Demo
-https://ecommerce-using-angular.vercel.app/
-
 ### Features
 - Ability to restock products whose quantity is less than 30.
 - Ability to check all placed order's list.
