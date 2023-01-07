@@ -10,10 +10,7 @@ import { ProductsService } from '../Services/products/products.service';
 export class ProductComponent {
   // product is considered a props from its parent component (products) that's why @Input is used
   // as the product is an input coming from this component's parent.
-  constructor(
-    private productsService: ProductsService,
-    private cartService: CartService
-  ) {}
+  constructor(private productsService: ProductsService,private cartService: CartService) {}
   @Input() product: product = {} as product;
   isShowing: boolean = true;
   //on products whose quantity is less than 30 (checked in html using directives),
