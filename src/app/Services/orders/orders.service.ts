@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import ordersJson from 'src/assets/data/orders.json'
+import ordersJson from 'src/assets/data/orders.json';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrdersService {
-
-  constructor() { }
-  getOrders(){
+  constructor() {}
+  getOrders() {
     return ordersJson;
   }
-  setOrders(object: any){
-    ordersJson.push(object)
+  setOrders(order: any) {
+    ordersJson.push(order);
   }
 }

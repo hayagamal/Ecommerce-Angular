@@ -1,11 +1,12 @@
 <div class="product-container">
-    <img src="{{product.ProductImg}}" alt="{{product.ProductName}}"/>
-    <h3>{{product.ProductName}}</h3>
-    <p>{{product.ProductPrice | currency}}</p>
-    <div id="quantity">
-    <p><span>Quantity:</span> {{product.AvailablePieces}}</p>
-    <button (click)="editQuantity()" *ngIf="product.AvailablePieces <= 30">Restock!</button>
+  <img src="{{ product.ProductImg }}" alt="{{ product.ProductName }}" />
+  <h3>{{ product.ProductName }}</h3>
+  <p>{{ product.ProductPrice | currency }}</p>
+  <div id="quantity">
+    <p><span>Qty:</span> {{ product.AvailablePieces }}</p>
+    <button (click)="editQuantity()" *ngIf="product.AvailablePieces <= 30">
+      Restock!
+    </button>
+    <button (click)="addToCart()" class="add-to-cart">Add to Cart</button>
+  </div>
 </div>
-    
-</div>
-    

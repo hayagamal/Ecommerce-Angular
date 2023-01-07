@@ -1,48 +1,50 @@
-<div class="order-details"> 
-<div class="container">
+<div class="order-details">
+  <div class="container">
     <div class="personal-details">
-<h1>Order Details</h1>
-<h2>{{order.OrderId}}</h2>
-<p><label>Placed on</label> {{order.OrderDate}}</p>
-<h3>Delivery Details</h3>
-<p>{{currentOrderUser.Name}}</p>
-<span>{{currentOrderUser.Email}}</span>
-<p>{{currentOrderUser.Address}}</p>
-<p>{{currentOrderUser.Phone}}</p>
-</div>
-<div class="products"><h3>Shipment 1 of 1 - <span>{{order.OrderId}}</span></h3>
-<div class="product-in-order" *ngFor="let product of productsOfOrder">
-
-    <div class="product-img">
-    <img src="{{product.ProductImg}}" width="200px"/>
+      <h1>Order Details</h1>
+      <h2>{{ order.OrderId }}</h2>
+      <p><label>Placed on</label> {{ order.OrderDate }}</p>
+      <h3>Delivery Details</h3>
+      <p>{{ currentOrderUser.Name }}</p>
+      <span>{{ currentOrderUser.Email }}</span>
+      <p>{{ currentOrderUser.Address }}</p>
+      <p>{{ currentOrderUser.Phone }}</p>
     </div>
-    <div class="product-details">
-        <div>
-        <h4>{{product.ProductName}}</h4>
-        <p>Quantity: {{product.qty}} </p>
-         </div>
-         <div>
-            <p>{{GetTotalPerItem(product.qty, product.ProductPrice) | currency}}</p>
-         </div>
+    <div class="products">
+      <h3>
+        Shipment 1 of 1 - <span>{{ order.OrderId }}</span>
+      </h3>
+      <div class="product-in-order" *ngFor="let product of productsOfOrder">
+        <div class="product-img">
+          <img src="{{ product.ProductImg }}" width="200px" />
+        </div>
+        <div class="product-details">
+          <div>
+            <h4>{{ product.ProductName }}</h4>
+            <p>Quantity: {{ product.qty }}</p>
+          </div>
+          <div>
+            <p>
+              {{
+                GetTotalPerItem(product.qty, product.ProductPrice) | currency
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-</div>
-</div>
-
-</div>
-
-<div class="payment">
+  <div class="payment">
     <h2>Order invoice</h2>
     <div class="subtotal">
-        <p><span> Subtotal</span></p>
-    <p>{{totalPerOrder|currency}}</p>
+      <p><span> Subtotal</span></p>
+      <p>{{ getTotal(order) | currency }}</p>
     </div>
     <div class="payment-method">
-        <p><span>Payment Method </span><p>
-        <p> {{order.PaymentType}}</p>
+      <p><span>Payment Method </span></p>
+      <p></p>
+      <p>{{ order.PaymentType }}</p>
     </div>
-   
+  </div>
 </div>
-</div>
-
-

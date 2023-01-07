@@ -1,11 +1,8 @@
 <!-- ng-container is used as a fragment -->
 <!-- here we are looping over the product component to show all products available on stock -->
 
-<div  class="products-list">
-    <ng-container *ngFor="let product of products" >
-        
-        <app-product [product]="product"></app-product>
-      
-    </ng-container>
-    </div>
-    
+<div class="products-list">
+  <ng-container *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
+  </ng-container>
+</div>

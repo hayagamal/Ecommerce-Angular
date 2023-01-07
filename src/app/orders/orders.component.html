@@ -1,16 +1,14 @@
 <table class="container">
-    <h3>Placed Orders</h3>
-    <thead>
+  <h3>Placed Orders</h3>
+  <thead>
     <tr class="headers">
       <th>Order ID</th>
       <th>Total</th>
       <th>Payment Method</th>
       <th>View Details</th>
-
-      </tr>
-    </thead>
- <ng-container *ngFor="let order of orders">
-    
+    </tr>
+  </thead>
+  <ng-container *ngFor="let order of orders">
     <app-order [order]="order"></app-order>
- </ng-container>
+  </ng-container>
 </table>

@@ -1,21 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Order } from 'src/assets/types/Order';
-import usersJson from 'src/assets/data/users.json';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { UsersService } from '../Services/users/users.service';
 import { ProductsService } from '../Services/products/products.service';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
+  styleUrls: ['./order.component.scss'],
 })
 export class OrderComponent implements OnInit {
-  subtotal: number =0;
-  constructor(private router: ActivatedRoute, private productService: ProductsService){}
-  ngOnInit(){
+  subtotal: number = 0;
+  constructor(private productService: ProductsService) {}
+  //on mounting (creation/initialization) of component, each order's subtotal is calculated
+  ngOnInit() {
     this.subtotal = this.productService.getsubTotal(this.order);
   }
+  //this indicates recieving data from the parent component which is the order.
   @Input() order: Order = {} as Order;
-  
-  
 }

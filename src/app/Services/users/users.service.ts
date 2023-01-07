@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import UsersJson from 'src/assets/data/users.json'
+import UsersJson from 'src/assets/data/users.json';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
-
-  constructor() { }
-  getUsers(){
-    return UsersJson
+  constructor() {}
+  getUsers() {
+    return UsersJson;
+  }
+  setUser(user: any) {
+    UsersJson.push(user);
   }
 }

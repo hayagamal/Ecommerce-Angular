@@ -4,14 +4,12 @@ import { OrdersService } from 'src/app/Services/orders/orders.service';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
-  constructor(private ordersService: OrdersService){}
+  constructor(private ordersService: OrdersService) {}
   orders: Order[] = [];
-  ngOnInit(): void{
-    //this.ordersService.setOrders({OrderId: 6969});
+  ngOnInit(): void {
     this.orders = this.ordersService.getOrders();
-    
   }
 }

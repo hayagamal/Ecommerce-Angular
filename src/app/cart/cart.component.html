@@ -1,0 +1,92 @@
+<div class="cart-container">
+  <h1>Shopping Cart</h1>
+  <div class="cart-content">
+    <div class="cart-items">
+      <h3>Cart Items</h3>
+      <div class="no-items" *ngIf="getItemsinCart().length == 0">
+        Cart is Empty
+      </div>
+      <div class="show-items" *ngIf="getItemsinCart().length > 0">
+        <ng-container *ngFor="let product of getItemsinCart()">
+          <div class="product">
+            <img src="{{ product.ProductImg }}" />
+
+            <div class="product-details">
+              <p>{{ product.ProductName }}</p>
+              <p>{{ product.ProductPrice | currency }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="order-personal-info">
+      <h3>Order Summary</h3>
+      <form (ngSubmit)="submit()">
+        <div>
+          <label for="username">Full Name:</label>
+          <input
+            type="text"
+            placeholder="Name"
+            name="username"
+            [(ngModel)]="form.Name"
+          />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            placeholder="Email Address"
+            name="email"
+            [(ngModel)]="form.Email"
+          />
+        </div>
+        <div>
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            placeholder="Address"
+            name="address"
+            [(ngModel)]="form.Address"
+          />
+        </div>
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input
+            type="text"
+            placeholder="Phone Number"
+            name="phone"
+            [(ngModel)]="form.Phone"
+          />
+        </div>
+        <div class="radio">
+          <label for="phone">Payment Method</label>
+          <div>
+            <input
+              type="radio"
+              id="online"
+              name="payment"
+              (change)="onItemChange($event)"
+              value="online"
+            />
+            <label for="online">Online</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="cash"
+              name="payment"
+              (change)="onItemChange($event)"
+              value="cash"
+            />
+            <label for="Cash">Cash</label>
+          </div>
+        </div>
+        <div class="total">
+          <h4>Subtotal</h4>
+          <p>{{ getTotal() | currency }}</p>
+        </div>
+        <input type="submit" class="submit-btn" value="Place Order" />
+      </form>
+    </div>
+  </div>
+</div>
