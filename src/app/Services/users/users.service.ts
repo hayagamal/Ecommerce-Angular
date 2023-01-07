@@ -5,9 +5,11 @@ import UsersJson from 'src/assets/data/users.json';
 })
 export class UsersService {
   constructor() {}
+  // return all users
   getUsers() {
     return UsersJson;
   }
+  //add new user when placing a new order.
   setUser(user: any) {
     UsersJson.push(user);
   }

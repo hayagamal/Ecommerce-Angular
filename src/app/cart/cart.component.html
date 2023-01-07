@@ -12,9 +12,13 @@
             <img src="{{ product.ProductImg }}" />
 
             <div class="product-details">
+                <div class="product-info">
               <p>{{ product.ProductName }}</p>
               <p>{{ product.ProductPrice | currency }}</p>
             </div>
+            <span (click)="removeFromCart(product)">x</span>
+            </div>
+            
           </div>
         </ng-container>
       </div>

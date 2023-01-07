@@ -5,9 +5,11 @@ import ordersJson from 'src/assets/data/orders.json';
 })
 export class OrdersService {
   constructor() {}
+  //returns all orders placed.
   getOrders() {
     return ordersJson;
   }
+  //adds new order to order's list
   setOrders(order: any) {
     ordersJson.push(order);
   }

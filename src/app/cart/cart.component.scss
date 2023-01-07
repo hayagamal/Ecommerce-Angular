@@ -63,12 +63,21 @@
       margin: 0;
       .product {
         display: flex;
+
         flex-direction: row;
         gap: 30px;
-        width: 400px;
-        margin: 20px;
+        width: 90%;
+        margin: 10px;
         img {
           width: 200px;
+        }
+        span{
+            cursor: pointer;
+        }
+        .product-details{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
         }
       }
     }

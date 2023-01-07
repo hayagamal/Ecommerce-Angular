@@ -31,6 +31,9 @@ export class CartComponent {
   getItemsinCart() {
     return this.cartService.getProductsinCart();
   }
+  removeFromCart(product: any){
+    return this.cartService.removeFromCart(product);
+  }
   //order's total is calculated by using the cart's service calculateTotal method.
   getTotal() {
     return this.cartService.calculateTotal();
@@ -39,8 +42,7 @@ export class CartComponent {
   onItemChange(event: any) {
     this.form.PaymentType = event.target.value;
   }
-  //since that we have to register the user first in order to complete order, the user properties are pushed to the users json file as well as the order
-  //and then the cart is set to empty as order is already placed.
+  //form validation
   validate(): string {
     let showOrder: boolean = true;
     let cart: any = this.cartService.cart;
@@ -56,6 +58,9 @@ export class CartComponent {
       return 'Please fill the empty fields.';
     } else return ' ';
   }
+  //since that we have to register the user first in order to complete order, the user properties are pushed to the users json file as well as the order
+  //and then the cart and input fields are set to empty as order is already placed.
+  //the method checks if all required inputs (Ex: customer name, phone, address ..) are given by user in order to proceed with placing the order.
   submit() {
     if (this.validate() == ' ') {
       let Id = this.form.UserId;

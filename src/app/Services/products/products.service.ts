@@ -8,6 +8,7 @@ export class ProductsService implements OnInit {
   subTotal: number = 0;
   constructor() {}
   ngOnInit() {}
+  // returns all products
   getProducts() {
     return productsJson;
   }
@@ -30,7 +31,9 @@ export class ProductsService implements OnInit {
 
     return prods;
   }
-
+  //since the total must be retrieved within the order's list before viewing the order's details,
+  //the order's products is looped on to calculate their total and this method is called twice,
+  //on the order's list and when selecting an order to show its details.
   getsubTotal(order: any): number {
     let totalPerOrder = 0;
     console.log(order.Products);
@@ -47,7 +50,7 @@ export class ProductsService implements OnInit {
     this.subTotal = 0;
     return totalPerOrder;
   }
-
+  //increments the quantity for products whose quantity is about to become out of stock
   incrementQuantity(productid: number, quantity: number) {
     let product = this.getProducts().find((x: any) => x.ProductId == productid);
     product.AvailablePieces += quantity;
