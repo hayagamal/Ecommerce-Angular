@@ -16,6 +16,7 @@ https://ecommerce-using-angular.vercel.app/
 - Quantity is restocked by 100 as a default number.
 - Admin has the ability to place an order (Impersonate).
 - Products added to cart are of single quantity (Quantity = 1).
+
 ## Screenshots
 ### Desktop View
 ![desktop-view-4](https://user-images.githubusercontent.com/50046177/211172767-1ef8906e-a4ea-4eab-bdd5-fd3561fecb9c.png)
